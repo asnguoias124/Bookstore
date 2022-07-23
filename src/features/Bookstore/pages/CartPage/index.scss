@@ -1,0 +1,73 @@
+.cart-page{
+    font-family: "Fantasy";
+    margin: 80px 80px;
+    
+    table{
+        width: 100% ;
+        border-collapse: collapse;
+
+        .cart-info{
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+
+    }
+
+    th{
+        text-align: left;
+        padding: 5px;
+        color: #fff;
+        background: #46d3ac;
+        font-weight: normal;
+        font-size: 20px;
+    }
+    
+    td{
+        padding: 10px 5px;
+    
+        input{
+            width: 40px;
+            height: 30px;
+            padding: 5px;
+        }
+
+        a{
+            color: red;
+            font-size: 14px;
+        }
+
+        img{
+            width:100px;
+            height:120px;
+            margin-right: 10px ;
+        }
+    }
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+
+    table{
+        border-top: 3px solid #8aeed2;
+        width: 100%;
+        max-width: 36%;
+    }
+}
+
+td:last-child{
+    text-align: right;
+}
+
+th:last-child{
+    text-align: right;
+}
+
+@media only screen and(max-width: 600px){
+    .cart-info{
+        p{
+            display: none;
+        }
+    }
+}

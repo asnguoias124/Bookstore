@@ -1,0 +1,38 @@
+.carouselbox{
+    display:flex;
+    flex-flow: row;
+
+    background-color: rgb(217, 252, 240) !important;
+    min-height:400px;
+    width: 1200px;
+    margin: 30px auto;
+   
+
+    background-position: center;
+    background-size: cover;
+
+    &__title{
+        color: wheat;
+        font-weight: bold;
+    }
+    &__desc{
+        color: black;
+        font-weight: normal;
+    }
+
+    &__item{
+        position: absolute;
+        display: flex;
+        height: 400px;
+        max-width: fit-content;
+    }
+    &__image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        width: 1400px;
+    }
+
+}
+

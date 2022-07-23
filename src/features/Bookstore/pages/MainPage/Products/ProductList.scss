@@ -1,0 +1,20 @@
+.productContainer{
+    display:flex;
+    flex-flow: row;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    min-height: 400px;
+    width: 1200px;
+    
+
+.productBox{
+    position: relative;
+    width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 20px;
+    padding: 10px;
+    }
+}

@@ -1,0 +1,144 @@
+.navbar{
+    position: absolute;
+    height: 80px;
+
+    .header-brand{
+        font-weight: 800;
+        font-size: 40px;
+        color: #46d3ac;
+        
+    }
+    
+    .navbar-brand{
+        display: flex; 
+        position: absolute;
+        left: 50px;
+        max-width: 100px;
+        min-height: 80px;
+    }
+}
+
+.nav-item{
+    position: absolute;
+    display: flex;
+    right: 0px;
+
+    margin-right: 50px;
+    
+    width: fit-content;
+    letter-spacing: 1px;
+
+    font-size: 20px ;
+    font-family: "Fantasy" ;
+    font-weight: bold ;
+
+
+        .CartCount{
+            padding: 10px auto;
+            top: 20%;
+            left: 75%;
+            position: absolute;
+            border-radius: 80px 80px 80px 80px;
+            height: 28px;
+            background-color: #46d3ac !important;
+        }
+    
+
+    
+}
+
+.navbar-light .navbar-text a, .navbar-light .navbar-text a:focus, .navbar-light .navbar-text a:hover {
+    color: rgb(112 112 113) !important;
+}
+
+.search{
+    display: flex;
+    margin: 30%;
+    max-width: 1500px;
+ 
+    .box{
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        top: 20%;
+        width: 700px;
+        input{
+            position: relative;
+            display: inline-block;
+            font-size: 20px;
+            box-sizing: border-box;
+
+            
+        }
+        input[type="text"]{
+            background: #fff;
+            width: 340px;
+            height: 45px;
+            border: none;
+            outline: none;
+            padding: 0 25px;
+            border-left: 1px solid #46d3ac;
+            border-top: 3px solid #46d3ac;
+            border-bottom: 3px solid #46d3ac;
+
+        }
+       
+        .searchBtn{
+            position: relative;
+            border-radius: 0 25px 25px 0;
+            left: 76.5%;
+            bottom: 45px;
+            width: 50px;
+            height: 45px;
+            cursor: pointer;
+            background-color: #46d3ac;
+
+
+            .fa-solid{
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                left: 25%;
+                top: 10px;
+                color: #fff;
+                transition: 0.4s ease-in-out;
+            }
+        }
+
+        .searchBtn:hover{
+            .fa-solid{
+                color: #333;
+            }
+ 
+        }
+    }
+
+    .navSearchItem{
+        position: relative;
+        display: inline-block;
+        justify-content: center;
+        align-self: center;
+        left:8%;
+        height: 45px;
+        top: 0.7px;
+        background-color: #fff;
+        border-radius: 25px 0 0 25px;
+        border-top: 3px solid #46d3ac ;
+        border-left: 3px solid #46d3ac ;
+        border-bottom: 3px solid #46d3ac ;
+    }
+
+
+    .nav-link {
+        padding: 7px 16px;
+       
+    }
+
+
+}
+
+
+
+
+
+
