@@ -59,10 +59,10 @@ function Cart() {
                                         </div>
                                     </div>
                                 </td>
-                                <td> 
-                                    <button onClick={() => handleDecreeCart(cartItem)}>-</button>
-                                    <input type="text" id="quantity" name="quantity" min="1" max="5" value={cartItem?.cartQty}/>
-                                    <button onClick={() => handleAddToCart(cartItem)}>+</button>
+                                <td className='product-count'> 
+                                    <button className="qtyminus" onClick={() => handleDecreeCart(cartItem)}>-</button>
+                                    <input type="text" id="quantity" name="quantity" className='count-number' value={cartItem?.cartQty}/>
+                                    <button className="qtyplus" onClick={() => handleAddToCart(cartItem)}>+</button>
                                 </td>
                                 <td>{((cartItem?.saleInfo?.listPrice?.amount) * (cartItem?.cartQty)).toLocaleString("en-US")} VND</td>
                             </tr>

@@ -8,6 +8,7 @@ import book4 from "../assets/images/book-4.png"
 import book5 from "../assets/images/book-5.png"
 import book6 from "../assets/images/book-6.png"
 import stand from "../assets/images/stand.png"
+import gifbook from "../assets/images/loader-img.gif"
 const Images = {
     BANNER1: banner1,
     BANNER2: banner2,
@@ -19,6 +20,7 @@ const Images = {
     BOOK5: book5,
     BOOK6: book6,
     STAND: stand,
+    GIF: gifbook
 
 }
 

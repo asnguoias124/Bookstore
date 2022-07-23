@@ -46,7 +46,7 @@ const initialState ={
             const ItemIndex = state.cart.findIndex(item => item.id === action.payload.id);
 
             if(ItemIndex >= 0){
-                state.cart[ItemIndex].cartQty += 1
+                state.cart[ItemIndex].cartQty += 1;
                 toast.info(`Đã thêm số lượng sách của ${state.cart[ItemIndex].volumeInfo.title}`,{
                     position:  'bottom-left'
                 })
@@ -105,12 +105,13 @@ const initialState ={
             })
         },
         getTotal(state,action){
+
            let {total, quantity} = state.cart.reduce((cartTotal,cartItem) =>{
                 const { cartQty} = cartItem;
                 const itemTotal= cartItem.saleInfo.listPrice.amount * cartQty
                 
                 cartTotal.total += itemTotal;
-                cartTotal.quantity += cartQty;
+                cartTotal.quantity += 1;
 
                 return cartTotal;
             },{

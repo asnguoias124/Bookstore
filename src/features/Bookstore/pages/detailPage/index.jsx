@@ -10,6 +10,7 @@ const Detail = () => {
 	const { id } = useParams();
 	const [isLoading, setIsLoading] = useState(true)
 	const data = useSelector(getSelectedBook);
+	const cart = useSelector((state) => state.cart)
 
 	const handleAddToCart = (book) =>{
 		console.log(book);
@@ -37,10 +38,11 @@ const Detail = () => {
 		
 			<div className="pd-wrap">
 				{Object.keys(data).length === 0 ?
-				(<div>...isLoading</div>)	
+				(<div className='loaded-container'><img src={Images.GIF} /></div>)	
 			 :(
 				<>
 				<div className="container">
+					
 					<div className="heading-section">
 						<h2>{data?.volumeInfo?.title}</h2>
 					</div>
@@ -72,18 +74,26 @@ const Detail = () => {
 								</div>
 								<h4>Tac gia:</h4> <h5>{data?.volumeInfo?.authors}</h5>
 								<h4>Danh muc: </h4><h5>{data?.volumeInfo?.categories}</h5>
-								<div className="product-count">
+								<>
+								{cart.cart?.map(cartItem => (
+								<div className="product-count" key={cartItem?.id}>
+									
+
 									<label htmlFor="size">Quantity</label>
 									<form action="#" className="display-flex">
 										<div className="qtyminus" onClick={() => handleDecreeCart(data)}>-</div>
-										<input type="text" name="quantity" className="qty" />
+										<input type="text" name="quantity" className="qty" value={cartItem?.cartQty} />
 										<div className="qtyplus" onClick={() => handleAddToCart(data)} >+</div>
 									</form>
 									<Link to="/cart">
 									<a className="round-black-btn" onClick={() => handleAddToCart(data)}>Add to Cart</a>
 									</Link>
+									
 								</div>
+								))}
+								</>
 							</div>
+							
 						</div>
 					</div>
 					<div className="product-info-tabs">

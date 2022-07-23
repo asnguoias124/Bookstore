@@ -35,7 +35,7 @@ function ProductList() {
   return (
 
     <div className='Book-wrapper'> 
-      <h3>Sach Tim kiem</h3>
+       <h1 class="heading"> <span>Sach tim kiem</span> </h1>
       <div className='productContainer'>
         <div className='productBox'>
           <>
@@ -45,7 +45,7 @@ function ProductList() {
 
       </div>
 
-      <h3>Sách Javascript</h3>
+      <h1 class="heading"> <span>featured books</span> </h1>
       <div className='productContainer'>
         <div className='productBox'>
           <>

@@ -20,7 +20,7 @@ function Header() {
     dispatch(getTotal())
   
 
-  }, [cart])
+  }, [cart,dispatch])
   
   return (
     <>
