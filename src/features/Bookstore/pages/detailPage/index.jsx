@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAsyncBookDetail, getSelectedBook, removeSelectedBook } from '../../../../redux/reducers/bookSlice';
+import { fetchAsyncBookDetail, getSelectedBook, removeSelectedBook, addBooks, decreaseCart } from '../../../../redux/reducers/bookSlice';
 import './detail.scss'
 import Images from '../../../../constants/images';
 
@@ -11,7 +11,15 @@ const Detail = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const data = useSelector(getSelectedBook);
 
+	const handleAddToCart = (book) =>{
+		console.log(book);
+		dispatch(addBooks(book))
 
+	}
+
+	const handleDecreeCart=(cartItem) =>{
+        dispatch(decreaseCart(cartItem))
+    }
 
 	useEffect(() => {
 
@@ -62,18 +70,18 @@ const Detail = () => {
 									</div>
 									<div className="product-price-discount"><span>{(data?.saleInfo?.listPrice?.amount)?.toLocaleString("en-US")}đ</span><span className="line-through">{((data?.saleInfo?.listPrice?.amount) + 50000)?.toLocaleString("en-US")}đ</span></div>
 								</div>
-								<h4>Tac gia: <h5>{data?.volumeInfo?.authors}</h5></h4>
-								<h4>Danh muc: <h5>{data?.volumeInfo?.categories}</h5></h4>
+								<h4>Tac gia:</h4> <h5>{data?.volumeInfo?.authors}</h5>
+								<h4>Danh muc: </h4><h5>{data?.volumeInfo?.categories}</h5>
 								<div className="product-count">
 									<label htmlFor="size">Quantity</label>
 									<form action="#" className="display-flex">
-										<div className="qtyminus">-</div>
+										<div className="qtyminus" onClick={() => handleDecreeCart(data)}>-</div>
 										<input type="text" name="quantity" className="qty" />
-										<div className="qtyplus">+</div>
+										<div className="qtyplus" onClick={() => handleAddToCart(data)} >+</div>
 									</form>
-
-									<a href="/cart" className="round-black-btn">Add to Cart</a>
-
+									<Link to="/cart">
+									<a className="round-black-btn" onClick={() => handleAddToCart(data)}>Add to Cart</a>
+									</Link>
 								</div>
 							</div>
 						</div>

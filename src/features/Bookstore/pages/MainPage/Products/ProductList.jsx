@@ -45,7 +45,7 @@ function ProductList() {
 
       </div>
 
-      <h3>Tap chi</h3>
+      <h3>Sách Javascript</h3>
       <div className='productContainer'>
         <div className='productBox'>
           <>

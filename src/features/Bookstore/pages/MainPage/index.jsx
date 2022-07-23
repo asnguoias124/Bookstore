@@ -15,7 +15,7 @@ const MainPage = () => {
   return (
    
      <div>  
-      <Picture title="Your awsome books" desc="Nulla vitae elit libero, a pharetra augue mollis interdum." backgroundUrl={Images.BOOK1} />
+      <Picture  />
       <ProductList />
       
     </div>

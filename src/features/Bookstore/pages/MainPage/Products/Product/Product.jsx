@@ -3,16 +3,19 @@ import './Product.scss'
 import Images from '../../../../../../constants/images'
 import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { fetchAsyncCart } from '../../../../../../redux/reducers/bookSlice';
+import { fetchAsyncCart, addBooks } from '../../../../../../redux/reducers/bookSlice';
 
 function Product(props) {
     const { data } = props;
   
     const dispatch = useDispatch();
 
-    // const handleAddToCart = (book) =>{
-    //     dispatch(fetchAsyncCart(book))
-    // }
+	const handleAddToCart = (book) =>{
+		console.log(book);
+		dispatch(addBooks(book))
+
+	}
+
     return (
         <>
      
@@ -25,19 +28,21 @@ function Product(props) {
                             <i className="fa-solid fa-heart"></i>
                             <span>Thêm vào mục ưa thích</span>
                         </li>
-                        <li>
+                        <li onClick={() => handleAddToCart(data)}>
                             <i className="fa-solid fa-cart-shopping"></i>
                             <span>Thêm vào giỏ hàng</span>
                         </li>
+                        <Link to ={`/books/${data.id}`} style={{ color: 'white'  }}>
                         <li>
                             <i className="fa-solid fa-eye"></i>
                           
                             
-                            <Link to ={`/books/${data.id}`} style={{ color: 'white'  }}> <span>Xem chi tiết</span></Link>
+                             <span>Xem chi tiết</span>
                            
                          
                             
                         </li>
+                        </Link>
                     </ul>
                 </div>
                 <div className="content">
@@ -48,7 +53,7 @@ function Product(props) {
                     </div>
                     <div className="price_rating">
                         <h2>
-                            {(data?.saleInfo?.listPrice?.amount).toLocaleString("en-US")}đ
+                            {(data?.saleInfo?.listPrice?.amount)?.toLocaleString("en-US")}đ
                         </h2>
                     </div>
                 </div>

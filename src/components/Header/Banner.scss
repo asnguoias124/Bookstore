@@ -54,7 +54,7 @@ html::-webkit-scrollbar-thumb{
         .logo{
             font-size: 2.5rem;
             font-weight: bolder;
-            color:var(--black);
+            color:var(--green);
             text-decoration: none;
             i{
                 color: var(--green);
@@ -101,6 +101,25 @@ html::-webkit-scrollbar-thumb{
             cursor: pointer;
         }
 
+        .icons{
+
+            .book-count{
+                position: relative;
+                border-radius: 150px;
+                width: 30px;
+                height: 30px;
+                font-size: 15px;
+                padding-top: 9px;
+                padding-left: 8px;
+                right: 10px;
+                bottom: 15px;
+                background: #ff5227  !important;
+                transition: 0.1s  ease-in-out;
+            }
+
+            
+        }
+        
         .icons div,a:hover{
             color:var(--green);
         }
@@ -108,7 +127,7 @@ html::-webkit-scrollbar-thumb{
     }
 
     .header-2{
-        background:var(--green);
+        background:#3fd1a8;
       
         .navbar{
             justify-content: center;
@@ -132,6 +151,33 @@ html::-webkit-scrollbar-thumb{
         top:10; left:20; right:50;
         z-index: 1000;
     }
+
+
+}
+
+.bottom-nav{
+    text-align: center;
+    background:var(--green);
+    position: fixed;
+    bottom:0; left:0; right:0;
+    z-index: 1000;
+
+
+
+    a{
+        font-size: 2.5rem;
+        padding-top: 0.5rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        padding-bottom: 0.5rem;
+        color:#fff;
+        display: none;
+    }
+
+    a:hover{
+        background:var(--dark-color);
+        color: #fff;
+    }
 }
 
 
@@ -145,12 +191,8 @@ html::-webkit-scrollbar-thumb{
 
 
 
-
-
-
-
-
 // media@
+
 
 @media (max-width:991px){
     html{
@@ -171,18 +213,23 @@ html::-webkit-scrollbar-thumb{
         .header-1{
             box-shadow: var(--box-shadow);
             position: relative;
-
+            padding: 4rem;
             .search-form{
                 position: absolute;
-                top:115%; right:2rem;
-                width:90%
-                box-shadow var(--box-shadow);
+                top: 115%; 
+                width: 90%;
+                box-shadow: var(--box-shadow);
             }
         }
         .header-2{
             display: none;
         }
        
+    }
+
+    
+    .bottom-navbar{
+        display: block;
     }
 
 

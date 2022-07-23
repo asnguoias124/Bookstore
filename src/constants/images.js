@@ -1,13 +1,13 @@
 import banner1 from "../assets/images/books1.jpg"
 import banner2 from "../assets/images/books7.jpg"
 import banner3 from "../assets/images/books3.jpg"
-import book1 from "../assets/images/book1.jpg"
-import book2 from "../assets/images/book2.jpg"
-import book3 from "../assets/images/book3.jpg"
-import book4 from "../assets/images/book4.jpg"
-import book5 from "../assets/images/book5.jpg"
-import book6 from "../assets/images/book6.jpg"
-
+import book1 from "../assets/images/book-1.png"
+import book2 from "../assets/images/book-2.png"
+import book3 from "../assets/images/book-3.png"
+import book4 from "../assets/images/book-4.png"
+import book5 from "../assets/images/book-5.png"
+import book6 from "../assets/images/book-6.png"
+import stand from "../assets/images/stand.png"
 const Images = {
     BANNER1: banner1,
     BANNER2: banner2,
@@ -18,6 +18,7 @@ const Images = {
     BOOK4: book4,
     BOOK5: book5,
     BOOK6: book6,
+    STAND: stand,
 
 }
 

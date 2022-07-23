@@ -1,4 +1,5 @@
 import './App.css';
+import "react-toastify/dist/ReactToastify.css"
 import React, { Suspense, useEffect, useState } from 'react';
 import {useDispatch} from 'react-redux'
 import NotFound from './components/NotFound';
@@ -15,12 +16,12 @@ import Login from './features/Login';
 import Header from './components/Header/Banner';
 import axios from 'axios';
 import { bookApiKey } from './api/bookApiKey';
-import {fetchAsyncBooks, fetchAsyncMagazine } from './redux/reducers/bookSlice';
+import {fetchAsyncBooks, fetchAsyncMagazine, getTotal } from './redux/reducers/bookSlice';
 import bookApi from './api/bookApi';
 import Detail from './features/Bookstore/pages/detailPage';
 import Banner from './components/Header/Banner';
 import Cart from './features/Bookstore/pages/CartPage';
-
+import { ToastContainer } from 'react-toastify';
 function App() {
 
   const [search, setSearch] = useState([]);
@@ -28,19 +29,21 @@ function App() {
   const dispatch = useDispatch();
 
 
-  // useEffect(() => {
-  //   const fetchProductList = async () => {
-  //         dispatch(fetchAsyncBooks('react'));
-  //         dispatch(fetchAsyncMagazine('java'));
-  //     }
-  //   fetchProductList();
+  useEffect(() => {
+    const fetchProductList = async () => {
+          dispatch(fetchAsyncBooks('react'));
+          dispatch(fetchAsyncMagazine('java'));
+          dispatch(getTotal())
+      }
+    fetchProductList();
 
-  //   }, [dispatch])
+    }, [dispatch])
   
 
   return (
 
     <Router>
+      <ToastContainer/>
       <Header />
     
       <Routes>
