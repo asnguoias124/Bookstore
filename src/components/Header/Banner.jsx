@@ -1,11 +1,11 @@
-import React,{useState, useEffect} from 'react'
-import './Banner.scss';
-import './script.js'
-import { Helmet } from 'react-helmet';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchAsyncBooks, getTotal } from '../../redux/reducers/bookSlice';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/esm/Badge';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchAsyncBooks } from '../../redux/reducers/bookSlice';
+import { getTotal } from '../../redux/reducers/cartSlice';
+import './Banner.scss';
+import './script.js';
 
 function Header() {
   const cart = useSelector((state) => state.cart)
@@ -34,7 +34,7 @@ function Header() {
         </form>
 
         <div className="icons">
-          <a href='/'><i className="fa-solid fa-heart"></i></a>
+        <Link to ={`/favorite`} ><i className="fa-solid fa-heart"></i></Link>
           <Link to="/cart"><i className="fa-solid fa-cart-shopping">
               <Badge className='book-count'>{cart.TotalQuantity}</Badge>
             </i></Link>
@@ -44,21 +44,15 @@ function Header() {
 
       <div className="header-2">
           <nav className='navbar'>
-              <a href='/'>Trang chu</a>
-              <a href='#'>Sach moi</a>
-              <a href="#">Tu sach</a>
+              <Link to='/'>Trang chu</Link>
+              <Link to='/'>Sach moi</Link>
+              <Link to="/">Tu sach</Link>
           </nav>  
       </div>
 
 
 
     </header>
-
-    <nav className='bottom-nav'>
-          <a href='/'><i className="fa-solid fa-house"></i></a>
-          <a href='#'><i className="fa-solid fa-lines-leaning"></i></a>
-          <a href="#"><i className="fa-solid fa-comment"></i></a>
-    </nav>
     </>
   )
 }

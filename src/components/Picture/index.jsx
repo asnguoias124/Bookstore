@@ -1,36 +1,13 @@
-import React from 'react'
-import { Carousel,Button } from 'react-bootstrap'
-import PropTypes from 'prop-types';
-import './Mainpage.scss'
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Images from '../../constants/images';
-import Swiper from 'swiper';
-import './script.js'
+import './Mainpage.scss';
+import './script.js';
 
 function Picture(props) {
-  const { title, desc, backgroundUrl } = props;
-
-  const PictureStyle = backgroundUrl
-    ? { backgroundImage: `url(${backgroundUrl})` }
-    : {}
 
   
-const swiper = new Swiper(".books-slider", {
-  loop:true,
-  centeredSlides: true,
-
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  },
-});
-
 
   return (
     // <Carousel className='carouselbox' >
@@ -100,15 +77,15 @@ const swiper = new Swiper(".books-slider", {
           <Button className='btn' >Mua ngay</Button>
         </div>
 
-        <div className="swiper books-slider">
+        <div className="books-slider">
           <div className="swiper-wrapper">
-            <a href="#" className='swiper-slide'><img src={Images.BOOK1} alt="" /></a>
-            <a href="#" className='swiper-slide'><img src={Images.BOOK2} alt="" /></a>
-            <a href="#" className='swiper-slide'><img src={Images.BOOK3} alt="" /></a>
+            <Link to='/' className='swiper-slide'><img src={Images.BOOK1} alt="" /></Link>
+            <Link to='/' className='swiper-slide'><img src={Images.BOOK2} alt="" /></Link>
+            <Link to='/' className='swiper-slide'><img src={Images.BOOK3} alt="" /></Link>
             
-            <a href="#" className='swiper-slide'><img src={Images.BOOK4} alt="" /></a>
-            <a href="#" className='swiper-slide'><img src={Images.BOOK5} alt="" /></a>
-            <a href="#" className='swiper-slide'><img src={Images.BOOK6} alt="" /></a>
+            <Link to='/' className='swiper-slide'><img src={Images.BOOK4} alt="" /></Link>
+            <Link to='/' className='swiper-slide'><img src={Images.BOOK5} alt="" /></Link>
+            <Link to='/' className='swiper-slide'><img src={Images.BOOK6} alt="" /></Link>
           </div>
           <img src={Images.STAND} className="stand" alt=""/>
         </div>

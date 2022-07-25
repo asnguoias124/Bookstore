@@ -1,43 +1,29 @@
-import './App.css';
-import "react-toastify/dist/ReactToastify.css"
-import React, { Suspense, useEffect, useState } from 'react';
-import {useDispatch} from 'react-redux'
-import NotFound from './components/NotFound';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
-  Outlet,
+  BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import './App.css';
+import Header from './components/Header/Banner';
+import Cart from './features/Bookstore/pages/CartPage';
+import Detail from './features/Bookstore/pages/detailPage';
+import Favorite from './features/Bookstore/pages/FavoritePage';
 import MainPage from './features/Bookstore/pages/MainPage';
 import Login from './features/Login';
-import Header from './components/Header/Banner';
-import axios from 'axios';
-import { bookApiKey } from './api/bookApiKey';
-import {fetchAsyncBooks, fetchAsyncMagazine, getTotal } from './redux/reducers/bookSlice';
-import bookApi from './api/bookApi';
-import Detail from './features/Bookstore/pages/detailPage';
-import Banner from './components/Header/Banner';
-import Cart from './features/Bookstore/pages/CartPage';
-import { ToastContainer } from 'react-toastify';
 function App() {
 
-  const [search, setSearch] = useState([]);
-  const [bookList, setBookList] = useState([]);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
 
-  useEffect(() => {
-    const fetchProductList = async () => {
-          dispatch(fetchAsyncBooks('react'));
-          dispatch(fetchAsyncMagazine('java'));
-          dispatch(getTotal())
-      }
-    fetchProductList();
+  // useEffect(() => {
+  //         console.log("hello");
+  //         dispatch(fetchAsyncBooks('react'));
+  //         dispatch(fetchAsyncMagazine('java'));
+  //         dispatch(getTotal())
 
-    }, [dispatch])
+  //   }, [dispatch])
   
 
   return (
@@ -51,6 +37,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/books/:id" element={<Detail />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/favorite' element={<Favorite />} />
       </Routes>
      
     </Router>

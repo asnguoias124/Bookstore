@@ -1,16 +1,22 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Picture from '../../../../components/Picture'
-import Images from '../../../../constants/images'
 import ProductList from './Products/ProductList'
-import StickyHeader from '../../../../components/StickyHeader'
-
-
-
-
-
+import { useDispatch } from 'react-redux'
+import { fetchAsyncBooks, fetchAsyncMagazine } from '../../../../redux/reducers/bookSlice'
+import { getTotal } from '../../../../redux/reducers/cartSlice'
 const MainPage = () => {
   
 
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+          console.log("hello");
+          dispatch(fetchAsyncBooks('react'));
+          dispatch(fetchAsyncMagazine('java'));
+          dispatch(getTotal())
+
+    }, [])
 
   return (
    

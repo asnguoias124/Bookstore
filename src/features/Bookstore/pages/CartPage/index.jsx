@@ -1,11 +1,9 @@
-import React,{useEffect} from 'react'
-import './index.scss'
-import Images from '../../../../constants/images'
-import { useDispatch, useSelector } from 'react-redux'
-import { decreaseCart, getCart, removeFromCart, addBooks, clearCart, Checkout, getTotal } from '../../../../redux/reducers/bookSlice'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/esm/Button'
-import { ToastContainer } from 'react-toastify'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addBooks , Checkout, clearCart, decreaseCart, getTotal, removeFromCart } from '../../../../redux/reducers/cartSlice'
+import './index.scss'
 
 function Cart() {
     const dispatch = useDispatch()
@@ -13,7 +11,7 @@ function Cart() {
  
     useEffect(()=>{
         dispatch(getTotal())
-    },[cart])
+    },[cart,dispatch])
 
     const handleRemoveFromCart = (cartItem) =>{
         dispatch(removeFromCart(cartItem))

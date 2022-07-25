@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import './ProductList.scss'
-import Images from '../../../../../constants/images'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Product from './Product/Product'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { getAllBooks, getAllMagazines } from '../../../../../redux/reducers/bookSlice'
+import Product from './Product/Product'
+import './ProductList.scss'
 
 function ProductList() {
   const books = useSelector(getAllBooks)
@@ -35,7 +33,7 @@ function ProductList() {
   return (
 
     <div className='Book-wrapper'> 
-       <h1 class="heading"> <span>Sach tim kiem</span> </h1>
+       <h1 className="heading"> <span>Sach tim kiem</span> </h1>
       <div className='productContainer'>
         <div className='productBox'>
           <>
@@ -45,7 +43,7 @@ function ProductList() {
 
       </div>
 
-      <h1 class="heading"> <span>featured books</span> </h1>
+      <h1 className="heading"> <span>featured books</span> </h1>
       <div className='productContainer'>
         <div className='productBox'>
           <>

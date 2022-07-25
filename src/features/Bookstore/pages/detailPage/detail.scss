@@ -136,9 +136,10 @@
         border-radius: 0 3px 3px 0;
     }
 
-    .product-count .qty {
+    .product-count input {
         width: 60px;
         text-align: center;
+        pointer-events: none;
     }
 
     .round-black-btn {

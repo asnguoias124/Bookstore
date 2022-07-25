@@ -1,0 +1,163 @@
+
+
+    .card{
+        width: 100%;
+        background: white;
+
+        .imgBx{
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit : cover;
+
+                transition: 0.5s ease-in-out;
+                
+            }
+
+            .action{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+
+                li{
+                    position: relative;
+                    list-style: none;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin:4px;
+                    cursor: pointer;
+                    color: #333 ;
+                    transform: translateX(60px);
+                    transition: transform 0.5s;
+
+                    span{
+                        position: absolute;
+                        right:50px;
+                        top: 50%;
+                        transform: translateY(-50%) translateX(-20px);
+                        white-space: nowrap;
+                        padding:4px 6px;
+                        background: #fff;
+                        color: #333 !important;
+                        font-weight: 500;
+                        font-size: 12px;
+                        border-radius: 4px;
+                        pointer-events: none;
+                        opacity: 0;
+                        transition: 0.5s;
+                    }
+
+                    span::before{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: -4px;
+                        width: 8px;
+                        height: 8px;
+                        background: #fff;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+                }
+
+
+
+                li:nth-child(3){
+                    transition-delay: 0.3s;
+                }
+
+                li:hover{
+                    background: #46d3ac;
+                    color: #fff;
+
+                    span{
+                        transform: translateY(-50%) translateX(0px);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .content{
+            padding: 10px;
+            
+            .productName{
+
+                h3{
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #333;
+                    margin: 5px 0;
+                }
+            }
+
+            .price_rating{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2{
+                    font-size: 20px;
+                    color: #ff2020;
+                    font-weight: 500;
+                }
+
+                .fa-solid{
+                    color: #ffd513;
+                    cursor: pointer;
+                }
+
+                .fa-solid.grey{
+                    color: #ccc;
+                }
+            }
+        }
+    }
+
+    .card:hover{
+
+        .imgBx{
+
+            img{
+                transform: scale(1.25);
+                
+            }
+        }
+
+        .action li{
+            transform: translateX(0px);
+            }
+        }
+
+
+.productContainer{
+    display:flex;
+    flex-flow: row;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    min-height: 400px;
+    width: 1200px;
+    
+
+.productBox{
+    position: relative;
+    width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-gap: 20px;
+    padding: 10px;
+    }
+}

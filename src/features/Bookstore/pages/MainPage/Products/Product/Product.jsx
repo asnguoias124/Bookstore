@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react'
-import './Product.scss'
-import Images from '../../../../../../constants/images'
-import {Link} from 'react-router-dom'
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchAsyncCart, addBooks } from '../../../../../../redux/reducers/bookSlice';
+import { Link } from 'react-router-dom';
+import { addBooks } from '../../../../../../redux/reducers/cartSlice';
+import { addFavoriteBooks } from '../../../../../../redux/reducers/FavoriteSlice';
+import './Product.scss';
 
 function Product(props) {
     const { data } = props;
@@ -11,10 +11,13 @@ function Product(props) {
     const dispatch = useDispatch();
 
 	const handleAddToCart = (book) =>{
-		console.log(book);
 		dispatch(addBooks(book))
 
 	}
+
+    const handleAddFavorite = (FavBook) =>{
+        dispatch(addFavoriteBooks(FavBook))
+    }
 
     return (
         <>
@@ -24,15 +27,16 @@ function Product(props) {
                 <div className="imgBx">
                     <img src={data.volumeInfo.imageLinks.smallThumbnail} alt="" />
                     <ul className="action">
-                        <li>
+                        <li onClick={() => handleAddFavorite(data)}>
                             <i className="fa-solid fa-heart"></i>
                             <span>Thêm vào mục ưa thích</span>
                         </li>
+                    
                         <li onClick={() => handleAddToCart(data)}>
                             <i className="fa-solid fa-cart-shopping"></i>
                             <span>Thêm vào giỏ hàng</span>
                         </li>
-                        <Link to ={`/books/${data.id}`} style={{ color: 'white'  }}>
+                        <Link to ={`/books/${data.id}`} style={{ color: 'white'  }} >
                         <li>
                             <i className="fa-solid fa-eye"></i>
                           
