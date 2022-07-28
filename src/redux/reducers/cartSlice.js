@@ -69,6 +69,15 @@ const cartSlice = createSlice({
                 position:  'bottom-left'
             })
         },
+        removeFromCart: (state,action) =>{
+            const nextCartItems =  state.cart.filter(
+                 cartItem => cartItem.id !== action.payload.id
+             )
+             toast.error(`Đã loại ${action.payload.volumeInfo.title}  khỏi giỏ hàng`,{
+                 position:  'bottom-left'
+             })
+             state.cart = nextCartItems; 
+         },
 
         getTotal(state,action){
 
